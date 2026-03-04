@@ -1,65 +1,56 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const [id, setid] = useState("");
+  const router = useRouter();
+
+  const handleSearch = () => {
+    if (!id.startsWith("tt")) {
+      alert("Enter Valid Movie ID");
+      return;
+    }
+    router.push(`/movie/${id}`);
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <main
+      className="relative flex min-h-screen justify-center items-center bg-[url('/home_bg.jpg')] bg-cover bg-center bg-fixed text-white px-4"
+    >
+      <div className="absolute inset-0 bg-black/50" />
+
+      <div className="relative w-full max-w-xl">
+        <div
+          className="space-y-8 text-center backdrop-blur-lg bg-white/5 border border-white/10 p-10 md:p-14 rounded-3xl shadow-2xl"
+        >
+          <div className="space-y-3">
+            <h1 className="mb-10 text-4xl md:text-5xl font-bold font-serif tracking-tight">
+              <u>AudienceLens AI</u>
+            </h1>
+            <p className="text-white/80 text-sm md:text-base">
+              Enter an IMDb ID to see what audiences think
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <input
+              value={id}
+              placeholder="e.g. tt0133093"
+              onChange={(e) => setid(e.target.value)}
+              className="w-full border border-white/15 p-4 rounded-xl bg-black/40 text-white placeholder-white/50 outline-none focus:ring-2 focus:ring-white/80 focus:border-transparent transition" // ⭐ upgraded input styling
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            <button
+              onClick={handleSearch}
+              className="w-full bg-white text-black font-semibold py-3 rounded-xl hover:bg-white/90 active:scale-[0.98] transition-all duration-150 shadow-lg" // ⭐ premium button
+            >
+              Analyze Movie
+            </button>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
