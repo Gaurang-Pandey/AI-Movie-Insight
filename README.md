@@ -45,11 +45,9 @@ The movie information is fetched from the OMDb API, and the sentiment analysis i
 
 ## Assumptions
 
--Users will enter a valid IMDb ID (for example: tt0133093).
-
--The AI sentiment prediction is based only on the movie plot, not real audience reviews.
-
--If the AI or API fails, the app shows a fallback message instead of crashing.
+- Users will enter a valid IMDb ID (for example: tt0133093).
+- The AI sentiment prediction is based only on the movie plot, not real audience reviews.
+- If the AI or API fails, the app shows a fallback message instead of crashing.
 
 ## Testing
 
