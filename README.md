@@ -35,25 +35,21 @@ The movie information is fetched from the OMDb API, and the sentiment analysis i
 
 ## Tech Stack Rationale
 
-**Next.js**
-Used for building the frontend and API routes in a single framework. It also makes deployment easy with Vercel.
+**Next.js:** Used for building the frontend and API routes in a single framework. It also makes deployment easy with Vercel.
 
-**Tailwind CSS**
-Used for styling because it allows quick UI development and keeps the styles consistent.
+**Tailwind CSS:** Used for styling because it allows quick UI development and keeps the styles consistent.
 
-**OMDb API**
-Used to fetch movie details like title, poster, rating, cast, and plot.
+**OMDb API:** Used to fetch movie details like title, poster, rating, cast, and plot.
 
-**Google Gemini AI**
-Used to analyze the movie plot and generate a predicted audience sentiment.
+**Google Gemini AI:** Used to analyze the movie plot and generate a predicted audience sentiment.
 
 ## Assumptions
 
-Users will enter a valid IMDb ID (for example: tt0133093).
+-Users will enter a valid IMDb ID (for example: tt0133093).
 
-The AI sentiment prediction is based only on the movie plot, not real audience reviews.
+-The AI sentiment prediction is based only on the movie plot, not real audience reviews.
 
-If the AI or API fails, the app shows a fallback message instead of crashing.
+-If the AI or API fails, the app shows a fallback message instead of crashing.
 
 ## Testing
 
