@@ -54,9 +54,9 @@ The movie information is fetched from the OMDb API, and the sentiment analysis i
 Basic unit tests are included using Jest.
 
 Run tests with:
-    ```bash
-    npm test
-    ```
+  ```bash
+  npm test
+  ```
 
 ## Deployment
 
