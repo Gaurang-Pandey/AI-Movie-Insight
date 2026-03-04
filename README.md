@@ -35,7 +35,7 @@ The movie information is fetched from the OMDb API, and the sentiment analysis i
 
 ## Tech Stack Rationale
 
-**Next.js:** Used for building the frontend and API routes in a single framework. It also makes deployment easy with Vercel.
+**Next.js:** Used for building the frontend and API routes in a single framework.
 
 **Tailwind CSS:** Used for styling because it allows quick UI development and keeps the styles consistent.
 
@@ -54,9 +54,9 @@ The movie information is fetched from the OMDb API, and the sentiment analysis i
 Basic unit tests are included using Jest.
 
 Run tests with:
-  ```bash
-  npm test
-  ```
+    ```bash
+    npm test
+    ```
 
 ## Deployment
 
